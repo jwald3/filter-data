@@ -33,14 +33,7 @@ include("config.php");
 <body>
     <div id="filters">
         <span>Fetch results by &nbsp;</span>
-        <select name="fetchval" id="fetchval">
-            <option value="" disabled="" selected="">Select Filter</option>
-            <option value="Advertisement">Advertisement</option>
-            <option value="Technology">Technology</option>
-            <option value="Education">Education</option>
-            <option value="Fashion">Fashion</option>
-
-        </select>
+        <input type="checkbox" name="fetchval" id="fetchval" />
     </div>
     <div class="container">
         <table class="table">
@@ -77,7 +70,7 @@ include("config.php");
     <script type="text/javascript">
         $(document).ready(function() {
             $("#fetchval").on('change', function() {
-                var value = $(this).val();
+                var value = $(this).is(':checked');
 
                 $.ajax({
                     url: "fetch.php",

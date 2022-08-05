@@ -3,8 +3,14 @@
 include("config.php");
 if (isset($_POST['request'])) {
     $request = $_POST['request'];
+    $today = strtotime('today');
 
-    $query = "SELECT * FROM post WHERE p_title = '$request'";
+    if ($request == "true") {
+        $query = "SELECT * FROM post WHERE p_tmg > DATE(NOW())";
+    } else {
+        $query = "SELECT * FROM post";
+    }
+
     $result = mysqli_query($con, $query);
     $count = mysqli_num_rows($result);
 ?>
