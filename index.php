@@ -32,7 +32,7 @@ include("config.php");
 
 <body>
     <div id="filters">
-        <span>Fetch results by &nbsp;</span>
+        <span>Only show upcoming events &nbsp;</span>
         <input type="checkbox" name="fetchval" id="fetchval" />
     </div>
     <div class="container">
